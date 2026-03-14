@@ -28,16 +28,17 @@
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  display: none; /* ! */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100px;
   height: 100px;
-  color: #000;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: monospace;
   opacity: 1 ;
 }
+
 .debug__block:hover {
   opacity: .3;
   cursor: pointer;
@@ -45,55 +46,76 @@
 
 .debug__text {
   display: block;
+  color: var(--black);
   font-size: 20px;
   font-weight: 700;
 }
+
 .debug__size {
   display: block;
+  color: var(--black);
   font-size: 40px;
   font-weight: 900;
 }
 
 
+.debug {
+  display: block;
+}
 
-@media (min-width: 320px) {
+@media (100px < width < 320px) {
+  
+  .debug__block_less {
+    display: flex;
+    background-color: var(--red);
+    color: #fff;
+    width: 70px;
+    height: 70px;
+  }
+  .debug__block .debug__text {
+    font-size: 16px;
+  }
+  .debug__block .debug__size {
+    font-size: 25px;
+  }
+}
+
+
+@media (width >= 320px) {
   /* * mobile * */
   .debug__block_mobile {
     display: flex;
-    /* // background-color: #FF8700; */
-    background-color: var(--orange);
+    background-color: var(--orange, #FF8700);
+    width: 90px;
+    height: 90px;
   }
 }
 .debug__block_sm {
   /* * sm * */
-  @media (min-width: 576px) {
+  @media (width > 576px) {
     display: flex;
-    /* // background-color: #FFD300; */
-    background-color: var(--yellow);
+    background-color: var(--yellow, #FFD300);
   }
 }
 .debug__block_md {
   /* * md * */
   @media (min-width: 768px) {
     display: flex;
-    /* // background-color: #DEFF0A; */
-    background-color: var(--lime);
+    background-color: var(--lime, #DEFF0A);
   }
 }
 .debug__block_lg {
   /* * lg * */
   @media (min-width: 1024px) {
     display: flex;
-    /* // background-color: #A1FF0A; */
-    background-color: var(--lawngreen);
+    background-color: var(--lawngreen, #A1FF0A);
   }
 }
 .debug__block_xl {
   /* * xl * */
   @media (min-width: 1240px) {
     display: flex;
-    /* // background-color: #007FFF; */
-    background-color: var(--skyblue);
+    background-color: var(--skyblue, #007FFF);
     color: var(--darkdarkgrey);
   }
 }
@@ -101,8 +123,7 @@
 @media (min-width: 1440px) {
   .debug__block_desk {
     display: flex;
-    /* // background-color: #580AFF; */
-    background-color: var(--violet);
+    background-color: var(--violet, #580AFF);
     color: var(--whitegrey);
   }
 }
@@ -110,8 +131,7 @@
   @media (min-width: 1600px) {
     /* * xxl * */
     display: flex;
-    /* // background-color: #BE0AFF; */
-    background-color: var(--magenta);
+    background-color: var(--magenta, #BE0AFF);
     color: var(--whitegrey);
   }
 }
@@ -119,20 +139,19 @@
   @media (min-width: 2560px) {
     /* * hd * */
     display: flex;
-    background-color: var(--purple);
+    background-color: var(--red, orangered);
     color: var(--whitegrey);
   }
 }
-  
 
-/* // * до 320px скрываем дебаги */
+/*
 @media (max-width: 319px) {
-  /* * < mobile */
   .debug,
   .debug__block {
     display: none;
   }
 }
+*/
 
 @media (min-width: 576px) {
   /* * mixin sm */
@@ -188,10 +207,6 @@
   /* * mixin hd */
   .debug__block_xxl {
     display: none;
-  }
-  .debug__block {
-    width: 200px;
-    height: 200px;
   }
 }
 
