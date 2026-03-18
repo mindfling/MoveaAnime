@@ -63,14 +63,12 @@
   display: block;
 }
 
+/* *test media */
 @media (100px < width < 320px) {
-  
   .debug__block_less {
     display: flex;
     background-color: var(--red);
     color: #fff;
-    width: 70px;
-    height: 70px;
   }
   .debug__block .debug__text {
     font-size: 16px;
@@ -86,8 +84,6 @@
   .debug__block_mobile {
     display: flex;
     background-color: var(--orange, #FF8700);
-    width: 90px;
-    height: 90px;
   }
 }
 .debug__block_sm {
@@ -187,8 +183,8 @@
     display: none;
   }
     .debug__block {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -198,8 +194,8 @@
     display: none;
   }
   .debug__block {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -214,7 +210,6 @@
 .nodebug {
   display: none;
 }
-
 
 
 
@@ -240,14 +235,14 @@
 
 // * 1024 lg laptop
 @mixin lg {
-  @media (min-width: 1024px) {
+  * @media (min-width: 1024px) {
     @content;
   }
 }
 
 // * 1240 xl
 @mixin xl {
-  @media (min-width: 1240px) {
+  * @media (min-width: 1240px) {
     @content;
   }
 }
@@ -256,7 +251,7 @@
 
 // * 1600 xxl
 @mixin xxl {
-  @media (min-width: 1600px) {
+  * @media (min-width: 1600px) {
     @content;
   }
 }
