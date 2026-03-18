@@ -5,41 +5,64 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MOVEA Project - Vite App template</title>
-  <!-- <link href="/node_modules/normalize.css/normalize.css" rel="stylesheet"> -->
-  <!-- <link href="/src/css/style.css" rel="stylesheet"> -->
-  <!-- <link href="/src/css/debug.css" rel="stylesheet"> -->
-  <script src="/src/js/debug.js" type="module"></script>
+  <link href="/node_modules/normalize.css/normalize.css" rel="stylesheet">
+  <link href="/src/css/style.css" rel="stylesheet">
+  <!-- <script src="/src/js/debug.js" type="module"></script> -->
 </head>
 
 <body class="page">
   <h1 class="page__title visually-hidden">MOVEA Project template title</h1>
   
-  <header class="header">
-    <div class="container">
-      header
-    </div>
-  </header>
+  <div class="grid-init grid">
+    <header class="header">
+      <div class="header__wrap">
+        <a class="header__logo" href="/">MOVEA</a> <!-- todo a svg .logo -->
   
-  <main class="page__main">
-    <section class="hero">
-      <div class="container">
-        hero container
+        <nav class="header__nav nav"> <!-- todo nav ul li a link -->
+          <a class="nav-link" href="#movies">Movies</a>
+          <a class="nav-link" href="#tv">TV shows</a>
+          <a class="nav-link" href="#animations">Animations</a>
+          <a class="nav-link" href="#plans">Plans</a>
+        </nav>
+  
+        <div class="user-block"> <!-- todo datetime -->
+          <p class="time">19:55</p>
+          <p class="date">March 30</p>
+        </div>
+  
+        <!-- todo a user profile link -->
+        <img src="img/avatar.png" alt="User avatar" class="header-user avatar">
       </div>
-    </section>
-    
-    <section class="promo">
-      <div class="container">
-        promo container
-      </div>
-    </section>
+    </header>
 
-  </main>
-  
-  <footer class="footer">
-    <div class="container">
-      footer
-    </div>
-  </footer>
+    <header class="header">
+      <div class="container">
+        header
+      </div>
+    </header>
+    
+    <main class="page__main">
+      <section class="hero">
+        <div class="container">
+          hero container
+        </div>
+      </section>
+      
+      <section class="promo">
+        <div class="container">
+          promo container
+        </div>
+      </section>
+
+    </main>
+    
+    <footer class="footer">
+      <div class="container">
+        footer
+      </div>
+    </footer>
+
+  </div>
   
 </body>
 </html>
