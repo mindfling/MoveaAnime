@@ -1,12 +1,21 @@
 import '/src/css/debug.css';
-// import javascriptLogo from '../../public/img/javascript.svg';
-// import viteLogo from '../../public/img/vite.svg';
+
+
+
+const getWinWidth = () => {
+  const scrollWidth = document.body.scrollWidth;
+  const offsetWidth = document.body.offsetWidth;
+  const clientWidth = document.body.clientWidth;
+  
+  const width = Math.max(scrollWidth, offsetWidth, clientWidth);
+  return width;
+}
 
 const debugMedia = () => {
-
-  document.querySelector(".page").insertAdjacentHTML('beforeend', `
+  
+  const html = `
   <!-- start debug media -->
-  <div class="debug page__debug">
+  <div class="debug debug-debug page__debug">
     <div class="debug__block debug__block_less">
       <div class="debug__size">less</div>
       <div class="debug__text">&lt; 320</div>
@@ -45,11 +54,31 @@ const debugMedia = () => {
     </div>
   </div>
   <!-- end debug -->
-`);
+`;
+
+  const bodyElem = document.querySelector('.page');
+  bodyElem.insertAdjacentHTML('beforeend', html);
+  
 }
 
+
+const renderResize = () => {
+  const widthElem = document.getElementById('window-size');
+  if (widthElem) {
+    widthElem.textContent = `${getWinWidth()} px`;
+  }
+}
 
 // run debug
 debugMedia();
 
-export default debugMedia;
+
+window.addEventListener('resize', (e) => {
+  console.log('resize window', getWinWidth());
+  renderResize();
+})
+
+window.addEventListener('load', (event) => {
+  console.log('on load document', getWinWidth());
+  renderResize();
+});
